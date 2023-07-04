@@ -1,3 +1,2 @@
-import('./render').then(exports => {
-    exports.render()
-})
+import "./shared";
+export default "index.js";

@@ -13,11 +13,17 @@ if (!isRunningRspack && !isRunningWebpack) {
  * @type {import('webpack').Configuration | import('@rspack/cli').Configuration}
  */
 const config = {
-  mode: "development",
   devtool: false,
-  entry: {
-    main: "./src/index",
-  },
+  mode: "development",
+	entry: {
+		index: "./src/index.js",
+		another: "./src/another.js"
+	},
+	optimization: {
+		splitChunks: {
+			chunks: "all"
+		}
+	},
   plugins: [
     ...(isRunningWebpack ? [
       new HtmlWebpackPlugin(),
